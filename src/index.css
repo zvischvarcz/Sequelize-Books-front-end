@@ -30,3 +30,16 @@ button {
   padding: 0.2vw;
   cursor: pointer;
 }
+
+
+.booksBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eachBookBox {
+  background-color: rgb(180, 180, 180);
+  margin: 1vw;
+  padding: 5vh 3vw;
+  text-align: center;
+}
