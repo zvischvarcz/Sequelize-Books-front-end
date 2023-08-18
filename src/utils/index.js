@@ -11,9 +11,9 @@ export const addBook = async (title, author, genre) => {
             })
         });
         const data = await response.json();
-        console.log(data)
+        return(data)
     } catch (error) {
-        console.log(error)
+        return(error)
     }
 }
 
@@ -28,9 +28,9 @@ export const addAuthor = async (author) => {
             })
         });
         const data = await response.json();
-        console.log(data)
+        return(data)
     } catch (error) {
-        console.log(error)
+        return(error)
     }
 }
 
@@ -45,9 +45,9 @@ export const addGenre = async (genre) => {
             })
         });
         const data = await response.json();
-        console.log(data)
+        return(data)
     } catch (error) {
-        console.log(error)
+        return(error)
     }
 }
 
@@ -64,9 +64,26 @@ export const updateBook = async (title, column, updateInput) => {
             })
         });
         const data = await response.json();
-        console.log(data)
+        return(data)
     } catch (error) {
-        console.log(error)
+        return(error)
+    }
+}
+
+export const deleteBook = async (title) => {
+    try {
+        const response = await fetch("http://localhost:5001/books/deleteBook", {
+            mode: 'cors',
+            method: 'DELETE',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                "title": title
+            })
+        });
+        const data = await response.json();
+        return(data)
+    } catch (error) {
+        return(error)
     }
 }
 

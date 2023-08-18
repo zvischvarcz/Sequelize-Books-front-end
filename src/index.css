@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
+
 *,
 *:before,
 *:after {
@@ -7,7 +9,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: 'PT Sans Caption', sans-serif;
   background-color: rgb(89, 89, 89);
 }
 
@@ -97,4 +99,11 @@ button {
 
 .authorPageButton:hover {
   background-color: rgb(49, 49, 49);
+}
+
+.res{
+  color: red;
+  height: 3vh;
+  width: 25vw;
+  font-size: small;
 }
