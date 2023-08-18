@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { addBook, addAuthor, addGenre, updateBook } from "../utils";
+import "../index.css";
 
 const Home = () => {
 
@@ -86,40 +87,48 @@ const updateSubmitHandler = async (event) => {
           </form>
           </div>
       </div>
-      <div>
-      <div className="formBox">
+      <div className="lowerBox">
+        <div className="formBox">
           <h1>Update a Book</h1>
         
-        <form onSubmit ={updateSubmitHandler}>
-              <label> Title
-                  <br></br>
-                  <input onChange={(event) => setTitle(event.target.value)} />
+          <form onSubmit ={updateSubmitHandler}>
+            <label> Title:
+              <br></br>
+              <input onChange={(event) => setTitle(event.target.value)} />
+            </label>
+            <br></br>
+            <br></br>
+            <label> Column to change:
+              <br></br>
+              <label>
+                <input onChange={(event) => setColumn(event.target.value)} type="radio" id="title" name="column" value="title" />
+               Title 
+              </label><br/>
+              <label>
+              <input onChange={(event) => setColumn(event.target.value)} type="radio" id="author" name="column" value="author" />
+                Author
+              </label><br/>
+              <label>
+                <input onChange={(event) => setColumn(event.target.value)} type="radio" id="genre" name="column" value="genre" />
+                 Genre
               </label>
+            </label>
+             <br></br>
+            <br></br>
+            <label> New {`${column}`}:
               <br></br>
-              <br></br>
-              <label> Column to change
-                  <br></br>
-                  <label>
-                  <input onChange={(event) => setColumn(event.target.value)} type="radio" id="title" name="column" value="title" />
-                  Title </label><br/>
-                  <label>
-                  <input onChange={(event) => setColumn(event.target.value)} type="radio" id="author" name="column" value="author" />
-                  Author</label><br/>
-                  <label>
-                  <input onChange={(event) => setColumn(event.target.value)} type="radio" id="genre" name="column" value="genre" />
-                  Genre</label>
-              </label>
-              <br></br>
-              <br></br>
-              <label> New {`${column}`}
-                  <br></br>
-                  <input onChange={(event) => setUpdateInput(event.target.value)} />
-              </label>
-              <br></br>
-              <br></br>
-              <button type='submit'>Update</button>
+              <input onChange={(event) => setUpdateInput(event.target.value)} />
+            </label>
+            <br></br>
+            <br></br>
+            <button type='submit'>Update</button>
           </form>
-          </div>
+        </div>
+        <div className="linksBox">
+          <a className="allBooksLink" href='/allBooks'>View all books</a>
+          <a className="allBooksLink" href='/getBooksByAuthor'>View books by Author</a>
+          <a className="allBooksLink" href='/getBooksByGenre'>View books by Genre</a>
+        </div>
       </div>
     </div>
   );

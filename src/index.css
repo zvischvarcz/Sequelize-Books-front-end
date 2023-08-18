@@ -8,6 +8,7 @@
 
 body {
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background-color: rgb(89, 89, 89);
 }
 
 
@@ -42,4 +43,58 @@ button {
   margin: 1vw;
   padding: 5vh 3vw;
   text-align: center;
+}
+
+.lowerBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.allBooksLink {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-size: x-large;
+  padding: 1vw;
+}
+
+.allBooksLink:hover {
+  background-color: rgb(49, 49, 49);
+}
+
+.linksBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30vh;
+}
+
+.searchWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10vh 5vw 3vh;
+  height: 10vh;
+}
+
+.authorPageInput {
+    width: 60vw;
+    font-size: xx-large;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.authorPageButton {
+  width: 10vw;
+  border: none;
+  color: white;
+  background-color: black;
+  font-size: x-large;
+}
+
+.authorPageButton:hover {
+  background-color: rgb(49, 49, 49);
 }

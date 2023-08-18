@@ -1,21 +1,23 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import "../index.css";
 
 const GetAllBooks = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
     const fetchData = async () => {
-        const books = await fetch("http://localhost:5001/books/getAllBooks");
-        const data = await books.json();
-        setBooks(data.books)
+        try {  
+            const books = await fetch("http://localhost:5001/books/getAllBooks");
+            const data = await books.json();
+            setBooks(data.books)
+        }catch (error) {
+            console.error("Error fetching data:", error);
+        }
     }
     fetchData();
     }, [])
-    useEffect(() => {
-        console.log(books)
-        }, [books])
-
+   
     return(
         <div className="booksBox">
             {books.map((book, index) => {
